@@ -1,3 +1,5 @@
+@extends('layouts.main')
+@section('content')
 <form action="/discounts/{{ $discounts->id }}" method="post">
     @method('PUT')
     @csrf
@@ -9,3 +11,4 @@
     <br>
     <input type="submit" value="Edit">
 </form>
+@endsection

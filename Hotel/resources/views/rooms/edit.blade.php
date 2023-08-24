@@ -1,24 +1,26 @@
+@extends('layouts.main')
+@section('content')
 <form action="/rooms/{{ $rooms->id }}" method="post">
     @method('PUT')
     @csrf
     <label for="hotel_id">Hotel</label>
     <select name="hotel_id" id="hotel_id">
         @foreach($hotels as $hotel)
-            <option value="{{$hotel->id}}" @if($hotel->id == $room->hotel_id) selected @endif>{{$hotel->name}}</option>
+            <option value="{{$hotel->id}}" @if($hotel->id == $rooms->hotel_id) selected @endif>{{$hotel->name}}</option>
         @endforeach
     </select>
     <br>
     <label for="guest_id">Guest</label>
     <select name="guest_id" id="guest_id">
         @foreach($guests as $guest)
-            <option value="{{$guest->id}}" @if($guest->id == $room->guest_id) selected @endif>{{$guest->name}}</option>
+            <option value="{{$guest->id}}" @if($guest->id == $rooms->guest_id) selected @endif>{{$guest->name}}</option>
         @endforeach
     </select>
     <br>
     <label for="discounts">Discount</label>
     <select name="discounts[]" id="discounts" multiple>
         @foreach($discounts as $discount)
-            <option value="{{$discount->id}}" @if(in_array($discount->id, $discount->discounts->pluck('id')->toArray())) selected @endif>{{$discount->id}}</option>
+        <option value="{{$discount->id}}" @if(in_array($discount->id, $discount->pluck('id')->toArray())) selected @endif>{{$discount->id}}</option>
         @endforeach
     </select>
     <br>
@@ -33,3 +35,4 @@
     <br>
     <input type="submit" value="Edit">
 </form>
+@endsection

@@ -15,9 +15,12 @@ class RoomController extends Controller
      */
     public function index()
     {
+       
+
         $rooms = Room::all();
         $hotels = Hotel::all();
-        return view('rooms.index', compact('rooms', 'hotels'));
+        $discounts = Discount::all();
+        return view('rooms.index', compact('rooms', 'hotels','discounts'));
     }
 
     /**
@@ -45,7 +48,7 @@ class RoomController extends Controller
         $room->price = $request->price;
         $room->save();
         $room->discounts()->attach($request->discounts);
-        return redirect()->route('rooms.index');
+        return redirect('/rooms');
     }
 
     /**
@@ -54,7 +57,7 @@ class RoomController extends Controller
     public function show(string $id)
     {
         $rooms = Room::find($id);
-        return view('rooms.show', compact('rooms'));
+        return view('rooms.show', compact('room'));
     }
 
     /**
@@ -67,6 +70,7 @@ class RoomController extends Controller
         $guests = Guest::all();
         $discounts = Discount::all();
         return view('rooms.edit', compact('rooms'), compact('hotels', 'guests', 'discounts'));
+        // return view('rooms.edit',compact('rooms'));
     }
 
     /**

@@ -1,3 +1,5 @@
+@extends('layouts.main')
+@section('content')
 <form action="/guests" method="post">
     @csrf
     <label for="name">Name</label>
@@ -12,3 +14,4 @@
     
     <input type="submit" value="Create">
 </form>
+@endsection

@@ -1,3 +1,5 @@
+@extends('layouts.main')
+@section('content')
 <form action="/hotels" method="post">
     @csrf
     <br>
@@ -12,3 +14,4 @@
     <br>
     <input type="submit" value="Create">
 </form>
+@endsection

@@ -1,4 +1,6 @@
-<table style="border:1px solid">
+@extends('layouts.main')
+@section('content')
+<table class="table mt-3">
     <tr style="border:1px solid">
         <th>Id</th>
         <th>Name</th>
@@ -28,3 +30,4 @@
 <a href="/rooms" class="btn btn-success">Room</a>
 <a href="/guests" class="btn btn-success">Guests</a>
 <a href="/discounts" class="btn btn-success">Discount</a>
+@endsection

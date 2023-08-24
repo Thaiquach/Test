@@ -1,3 +1,5 @@
+@extends('layouts.main')
+@section('content')
 <table style="border:1px solid">
     <tr style="border:1px solid">
         <th>Id</th>
@@ -28,3 +30,4 @@
 <a href="/hotels" class="btn btn-success">Hotel</a>
 <a href="/rooms" class="btn btn-success">Room</a>
 <a href="/discounts" class="btn btn-success">Discount</a>
+@endsection

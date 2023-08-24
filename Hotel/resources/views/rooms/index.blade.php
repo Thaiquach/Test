@@ -1,4 +1,6 @@
-<table style="border:1px solid">
+@extends('layouts.main')
+@section('content')
+<table class="table mt-3">
     <tr style="border:1px solid">
         <th>Id</th>
         <th>Hotel</th>
@@ -12,11 +14,12 @@
     @foreach($rooms as $room)
         <tr>
             <td>{{ $room->id }}</td>
-            <td><a href="/hotels/{{$room->hotel->id}}">{{ $room->hotel->name }}</a></td>
-            <td><a href="/guests/{{$room->guest->id}}">{{ $room->guest->name }}</a></td>
+            <td>{{ $room->hotel_id }}</td>
+            <td>{{$room->guest_id}}</td>
             <td>
-                @foreach($room->discounts as $discount)
-                    <a href="/discounts/{{$discount->id}}">{{ $discount->id }}</a>
+               
+            @foreach($room->discounts as $discounts)
+                    <a href="/discounts/{{$discounts->id}}">{{ $discounts->rate }}</a>
                 @endforeach
             </td>
             <td>{{ $room->number }}</td>
@@ -38,3 +41,4 @@
 <a href="/hotels" class="btn btn-success">Hotel</a>
 <a href="/guests" class="btn btn-success">Guests</a>
 <a href="/discounts" class="btn btn-success">Discount</a>
+@endsection

@@ -10,7 +10,7 @@ class Room extends Model
     use HasFactory;
     protected $table = 'rooms'; // this is the table name
     protected $fillable = ['hotel_id', 'guest_id', 'number', 'types', 'price'];
-    public function discount()
+    public function discounts()
     {
         return $this->belongsToMany(Discount::class);
     }
