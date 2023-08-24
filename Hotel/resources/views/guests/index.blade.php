@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<table style="border:1px solid">
+<table class="table mt-3">
     <tr style="border:1px solid">
         <th>Id</th>
         <th>Name</th>
