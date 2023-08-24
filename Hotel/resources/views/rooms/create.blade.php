@@ -5,21 +5,21 @@
     <label for="hotel_id">Hotel</label>
     <select name="hotel_id" id="hotel_id">
         @foreach($hotels as $hotel)
-            <option value="{{$hotel->id}}">{{$hotel->name}}</option>
+            <option value="{{$hotel->id}}">{{$hotel->id}}-{{$hotel->name}}</option>
         @endforeach
     </select>
     <br>
     <label for="guest_id">Guest</label>
     <select name="guest_id" id="guest_id">
         @foreach($guests as $guest)
-            <option value="{{$guest->id}}">{{$guest->name}}</option>
+            <option value="{{$guest->id}}">{{$guest->id}}-{{$guest->name}}</option>
         @endforeach
     </select>
     <br>
     <label for="discounts">Discount</label>
     <select name="discounts[]" id="discounts" multiple>
         @foreach($discounts as $discount)
-            <option value="{{$discount->id}}">{{$discount->id}}</option>
+            <option value="{{$discount->id}}">{{$discount->id}}-{{$discount->rate}}</option>
         @endforeach
     </select>
     <br>

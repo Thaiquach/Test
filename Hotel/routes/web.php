@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::resources([
     'hotels' => HotelController::class
@@ -32,6 +29,11 @@ Route::resources([
 Route::resources([
     'discounts' => DiscountController::class
 ]);
+
+Route::resources([
+    '/' => RoomController::class
+]);
+
 Route::resources([
     'rooms' => RoomController::class
 ]);
